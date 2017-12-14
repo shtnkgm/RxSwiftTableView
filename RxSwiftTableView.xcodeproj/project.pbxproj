@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B7609F320573C295725D107 /* Pods_RxSwiftTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB273F6B6CAC019B7CDFD82D /* Pods_RxSwiftTableView.framework */; };
 		DA089ECA1FE2AF6B00D2222E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA089EC91FE2AF6B00D2222E /* AppDelegate.swift */; };
 		DA089ECC1FE2AF6B00D2222E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA089ECB1FE2AF6B00D2222E /* ViewController.swift */; };
 		DA089ECF1FE2AF6B00D2222E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA089ECD1FE2AF6B00D2222E /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F65CBD407B39DB7DF8B5057 /* Pods-RxSwiftTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftTableView/Pods-RxSwiftTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		7F3EC4703D3CBA283E347E5A /* Pods-RxSwiftTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwiftTableView/Pods-RxSwiftTableView.release.xcconfig"; sourceTree = "<group>"; };
+		BB273F6B6CAC019B7CDFD82D /* Pods_RxSwiftTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA089EC61FE2AF6B00D2222E /* RxSwiftTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA089EC91FE2AF6B00D2222E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA089ECB1FE2AF6B00D2222E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B7609F320573C295725D107 /* Pods_RxSwiftTableView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2524DEBD88256AF98BA3748E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB273F6B6CAC019B7CDFD82D /* Pods_RxSwiftTableView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE3BCC7FBBC19D13B89ABFE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F65CBD407B39DB7DF8B5057 /* Pods-RxSwiftTableView.debug.xcconfig */,
+				7F3EC4703D3CBA283E347E5A /* Pods-RxSwiftTableView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DA089EBD1FE2AF6B00D2222E = {
 			isa = PBXGroup;
 			children = (
 				DA089EC81FE2AF6B00D2222E /* RxSwiftTableView */,
 				DA089EC71FE2AF6B00D2222E /* Products */,
+				CE3BCC7FBBC19D13B89ABFE2 /* Pods */,
+				2524DEBD88256AF98BA3748E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA089ED81FE2AF6B00D2222E /* Build configuration list for PBXNativeTarget "RxSwiftTableView" */;
 			buildPhases = (
+				052FAF8BAEDE466B9449F750 /* [CP] Check Pods Manifest.lock */,
 				DA089EC21FE2AF6B00D2222E /* Sources */,
 				DA089EC31FE2AF6B00D2222E /* Frameworks */,
 				DA089EC41FE2AF6B00D2222E /* Resources */,
+				2AABFC49D0BB96151F624422 /* [CP] Embed Pods Frameworks */,
+				73FD86C4B4C396F5E0FEB57F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		052FAF8BAEDE466B9449F750 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxSwiftTableView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AABFC49D0BB96151F624422 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftTableView/Pods-RxSwiftTableView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftTableView/Pods-RxSwiftTableView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73FD86C4B4C396F5E0FEB57F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxSwiftTableView/Pods-RxSwiftTableView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA089EC21FE2AF6B00D2222E /* Sources */ = {
@@ -272,6 +355,7 @@
 		};
 		DA089ED91FE2AF6B00D2222E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F65CBD407B39DB7DF8B5057 /* Pods-RxSwiftTableView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +371,7 @@
 		};
 		DA089EDA1FE2AF6B00D2222E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F3EC4703D3CBA283E347E5A /* Pods-RxSwiftTableView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
